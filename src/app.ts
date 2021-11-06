@@ -1,9 +1,12 @@
-import express from  'express'
+import express from 'express';
 
-const app = express()
+import { categoriesRoutes } from './routes/categories.routes';
 
-app.use(express.json())
+const app = express();
 
-app.get('/', (_, response) => response.json({ message: 'Hello World!'}) )
+app.use(express.json());
+app.use(categoriesRoutes);
 
-export { app }
+app.get('/', (_, response) => response.json({ message: 'Hello World!' }));
+
+export { app };
