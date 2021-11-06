@@ -1,0 +1,8 @@
+{
+  "name": "RentXAPI",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Pedroabreu155/RentXAPI.git",
+  "author": "Pedro Abreu <pedroliveirabreu@gmail.com>",
+  "license": "MIT"
+}
