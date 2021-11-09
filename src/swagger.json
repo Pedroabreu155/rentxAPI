@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RentxAPI documentation",
+    "description": "Documentation for rentxAPI who serve cars rent services.",
+    "version": "1.0.0",
+    "contact": {
+      "email": "pedroliveirabreu@gmail.com"
+    }
+  }
+}
