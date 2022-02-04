@@ -20,18 +20,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "name": {
-                        "type": "string"
-                      },
-                      "description": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/definitions/Category"
                 }
               }
             }
@@ -46,19 +35,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "example": {
-                  "name": "Sedan",
-                  "description": "Carros sedan de 3 módulos"
-                }
+                "$ref": "#/definitions/Category"
               }
             }
           }
@@ -73,6 +50,27 @@
         }
       }
     },
+    "/categories/import": {
+      "post": {
+        "tags": ["Category"],
+        "summary": "Upload a single or list of categories.",
+        "description": "Upload a single or list of categories with a file.",
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
     "/specifications": {
       "post": {
         "tags": ["Specification"],
@@ -82,19 +80,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "example": {
-                  "name": "Câmbio automático",
-                  "description": "Carros com câmbio automático eletrônico"
-                }
+                "$ref": "#/definitions/Specification"
               }
             }
           }
@@ -107,6 +93,38 @@
             "description": "Specification already exists"
           }
         }
+      }
+    }
+  },
+  "definitions": {
+    "Category": {
+
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+      }
+    },
+    "Specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "name": "Câmbio automático",
+        "description": "Carros com câmbio automático eletrônico"
       }
     }
   }
