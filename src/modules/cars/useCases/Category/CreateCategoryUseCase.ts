@@ -1,5 +1,5 @@
 import { inject, injectable } from 'tsyringe';
-import { ICategoriesRepository } from '../../../repositories/Categories/interfaces';
+import { ICategoriesRepository } from '../../repositories/Categories/interfaces';
 
 interface IRequest {
   name: string;
